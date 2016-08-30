@@ -1,0 +1,49 @@
+<!doctype html>
+
+<head>
+    <title> Accordion </title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+  <sc-accordion role="tablist">   <!-- creating a custom element for an accordion. custom elements should have a - in the name -->
+    <sc-pane aria-expanded="true" role="tabpanel">    <!-- we need to set aria-expanded explicity to true for the browser to make it referencable. -->
+      <button role="tab">  Panel 1  </button>
+      <div class="content">
+        This is some content.
+      </div>
+    </sc-pane>
+
+    <sc-pane role="tabpanel">
+      <button role="tab"> Panel 2  </button>
+          <div class="content">
+            <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+
+            <p> Ut cras amet, est vestibulum mi, amet tincidunt in volutpat accumsan, ultrices ultricies risus nec. Scelerisque nec sed pede nulla nulla. Eu per lorem luctus, in curabitur sed non ullamcorper, orci mauris, duis scelerisque ut urna. Vel mattis sodales. Lectus nisl lobortis, tristique nunc scelerisque et. Porttitor id eget platea sit quam non, urna sed ipsum sem in faucibus mi, dictum nec sociosqu quis aptent, sed pede eget sapien ultricies vitae, tristique lacus sit nulla elit.
+            </p>
+          </div>
+    </sc-pane>
+
+    <sc-pane role="tabpanel">
+      <button role="tab"> Panel 3  </button>
+      <div class="content">
+        This is some more content.
+      </div>
+    </sc-pane>
+
+  </sc-acordion>
+
+  <script>
+  document.querySelector('sc-accordion').setAttribute('enhanced','');
+  </script>
+
+  <script src="sc-pane.js"></script>
+  <script src="sc-accordion.js"></script>
+
+</body>
+</html>

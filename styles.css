@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+}
+
+html,body {
+  margin: 0;
+  padding: 0;
+  width: 100vh;     /* sizing things relative to the current viewport size*/
+  width: 100vw;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #EEE;
+
+
+}
+
+sc-accordion {
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.4);
+  background: #FFF;
+  border-radius: 3px;
+
+}
+
+sc-accordion[enhanced] {
+    visibility: hidden;   /* initially lets set the accordion to hidden so we dont get a flash when loading */
+
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+
+}
+
+sc-accordion[active] {
+    visibility: visible;
+
+}
+
+
+sc-accordion[active] sc-pane {
+    transition: transform 0.3s cubic-bezier(0, 0, 0.3, 1);
+
+}
+
+sc-accordion[enhanced] sc-pane {
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+}
+
+sc-pane button[role="tab"] {  /* this class will focus only on buttons with a role of tab. */
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    border: none;
+    font-size: 16px;
+    background: #666;
+    color: #FFF;
+    border-bottom: 1px solid #444;
+}
+
+sc-pane button[role="tab"]:focus {    /* this will give us a clear focus on the buttons. */
+  background: #333;
+}
+
+sc-pane .content {
+    padding: 16px;
+    overflow-y: scroll;       /* overflow y means that you want all panels to have scroll. Auto will mean they are only there on demand. */
+    background-color: #FFF;
+}
